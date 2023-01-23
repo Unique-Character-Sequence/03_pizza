@@ -1,3 +1,5 @@
+import '../scss/app.scss'
+
 export let PizzaApp = () => (
     <div className="wrapper">
         <div className="header">

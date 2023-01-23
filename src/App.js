@@ -1,5 +1,5 @@
 import './App.css';
-import {PizzaApp} from "./Components/PizzaApp";
+import {PizzaApp} from "./сomponents/PizzaApp";
 
 
 const App = () => (
