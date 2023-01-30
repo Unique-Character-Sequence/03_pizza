@@ -12,7 +12,6 @@ export let PizzaApp = () => (
                 <h2 className="content__title">Все пиццы</h2>
                 <div className="content__items">
                     {/*{objects.map((object, i) => <ObjectRow obj={object} key={i} />)}*/}
-
                     <PizzaBlock name={"Pepperoni"} price={300}/>
                     <PizzaBlock name={"Diablo"} price={320}/>
                     <PizzaBlock name={"5 Cheeses"} price={310}/>
