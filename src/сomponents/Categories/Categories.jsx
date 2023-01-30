@@ -5,23 +5,18 @@ export let Categories = () => {
     const handleClick = (index) => setHighlightedCategory(index);
     const isHighlighted = (index) => highlightedCategory === index ? "active" : ""
     const categories = [
-        {index: 0, name: "Все"},
-        {index: 1, name: "Мясные"},
-        {index: 2, name: "Вегетарианская"},
-        {index: 3, name: "Гриль"},
-        {index: 4, name: "Острые"},
-        {index: 5, name: "Закрытые"},
+        "Все",
+        "Мясные",
+        "Вегетарианские",
+        "Гриль",
+        "Острые",
+        "Закрытые"
     ];
     return (
         <div className="categories">
             <ul>
-                {categories.map(category => (
-                    <li key={category.index}
-                        className={isHighlighted(category.index)}
-                        onClick={() => handleClick(category.index)}>
-                        {category.name}
-                    </li>
-                ))}
+                {categories.map((category, index) =>
+                    <li onClick={() => handleClick(index)} className={isHighlighted(index)}>{category}</li>)}
             </ul>
         </div>
     );
