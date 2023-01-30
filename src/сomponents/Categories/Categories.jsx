@@ -1,31 +1,27 @@
 import {useState} from "react";
 
 export let Categories = () => {
-    const [highlightedCategory, setHighlightedCategory] = useState("");
+    const [highlightedCategory, setHighlightedCategory] = useState(0);
     const handleClick = (index) => setHighlightedCategory(index);
     const isHighlighted = (index) => highlightedCategory === index ? "active" : ""
-
+    const categories = [
+        {index: 0, name: "Все"},
+        {index: 1, name: "Мясные"},
+        {index: 2, name: "Вегетарианская"},
+        {index: 3, name: "Гриль"},
+        {index: 4, name: "Острые"},
+        {index: 5, name: "Закрытые"},
+    ];
     return (
         <div className="categories">
             <ul>
-                <li className={isHighlighted(0)} onClick={() => handleClick(0)}>
-                    Все
-                </li>
-                <li className={isHighlighted(1)} onClick={() => handleClick(1)}>
-                    Мясные
-                </li>
-                <li className={isHighlighted(2)} onClick={() => handleClick(2)}>
-                    Вегетарианская
-                </li>
-                <li className={isHighlighted(3)} onClick={() => handleClick(3)}>
-                    Гриль
-                </li>
-                <li className={isHighlighted(4)} onClick={() => handleClick(4)}>
-                    Острые
-                </li>
-                <li className={isHighlighted(5)} onClick={() => handleClick(5)}>
-                    Закрытые
-                </li>
+                {categories.map(category => (
+                    <li key={category.index}
+                        className={isHighlighted(category.index)}
+                        onClick={() => handleClick(category.index)}>
+                        {category.name}
+                    </li>
+                ))}
             </ul>
         </div>
     );
