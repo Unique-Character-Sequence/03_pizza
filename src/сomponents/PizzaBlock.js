@@ -2,7 +2,9 @@ import {useState} from "react";
 
 export let PizzaBlock = (props) => {
     let [pizzaAmount, setPizzaAmount] = useState(0);
-    let handleIncrementPizzaAmount = () => {setPizzaAmount(pizzaAmount+1)}
+    let handleIncrementPizzaAmount = () => {
+        setPizzaAmount(pizzaAmount + 1)
+    }
     return (
         <div className="pizza-block">
             <img
@@ -26,7 +28,7 @@ export let PizzaBlock = (props) => {
             <div className="pizza-block__bottom">
                 <div className="pizza-block__price">от {props.price ? props.price : 777} ₽</div>
                 <button onClick={handleIncrementPizzaAmount}
-                     className="button button--outline button--add">
+                        className="button button--outline button--add">
                     <svg
                         width="12"
                         height="12"
